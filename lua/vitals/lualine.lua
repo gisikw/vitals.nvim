@@ -12,11 +12,11 @@ function Component:init(options)
 
   self.colors = {
     pass = highlight.create_component_highlight_group(
-      { fg = '#00ff00' }, 'VitalsPass', self.options),
+      "VitalsPass", 'VitalsPass', self.options),
     fail = highlight.create_component_highlight_group(
-      { fg = '#ff5555' }, 'VitalsFail', self.options),
+      "VitalsFail", 'VitalsFail', self.options),
     pending = highlight.create_component_highlight_group(
-      { fg = '#aaaaaa' }, 'VitalsPending', self.options),
+      "VitalsPending", 'VitalsPending', self.options),
   }
 end
 
@@ -33,7 +33,7 @@ function Component:update_status()
       highlight.component_format_highlight(color) .. icon)
   end
 
-  return table.concat(icons, " ") .. " "
+  return " " .. table.concat(icons, " ") .. " "
 end
 
 return Component
